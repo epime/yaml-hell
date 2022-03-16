@@ -6,14 +6,14 @@ annotations:
     kubernetes.io/ingress.class: azure/application-gateway
     certmanager.k8s.io/cluster-issuer: letsencrypt-staging
 spec:
-tls:
-- hosts:
-    - devcluster.profitbase.biz
-    secretName: guestbook-secret-name
-rules:
-- host: <PLACEHOLDERS.COM>
-    http:
-    paths:
-    - backend:
-        serviceName: frontend
-        servicePort: 80
+    tls:
+        - hosts:
+            - devcluster.profitbase.biz
+            secretName: guestbook-secret-name
+        rules:
+        - host: devcluster.profitbase.biz
+            http:
+                paths:
+                - backend:
+                    serviceName: frontend
+                    servicePort: 80
