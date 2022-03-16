@@ -12,12 +12,12 @@ spec:
             - devcluster.profitbase.biz
         secretName: guestbook-secret-name
     rules:
-        - 
-            host: devcluster.profitbase.biz
-            http:
-                paths:
-                    - 
-                        backend:
-                            serviceName: frontend
-                            servicePort: 80
-                        path: /
+        - http:
+            paths:
+                - path: /
+                    backend:
+                        service:
+                            name: aspnetapp
+                            port:
+                                number: 80
+                    pathType: Exact
