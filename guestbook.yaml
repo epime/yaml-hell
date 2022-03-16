@@ -13,7 +13,6 @@ spec:
         secretName: guestbook-secret-name
     rules:
         - 
-            host: devcluster.profitbase.biz
             http:
                 paths:
                     - 
