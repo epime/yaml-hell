@@ -6,18 +6,17 @@ metadata:
         kubernetes.io/ingress.class: azure/application-gateway
         certmanager.k8s.io/cluster-issuer: letsencrypt-staging
 spec:
-    rules:
-        - http:
-            paths:
-                - path: /
-                    backend:
-                        service:
-                            name: aspnetapp
-                            port:
-                                number: 80
-                    pathType: Exact
-    tls:
-    - 
-        hosts: 
-            - devcluster.profitbase.biz
-        secretName: guestbook-secret-name
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Exact
+            backend:
+              service:
+                name: aspnetapp
+                port:
+                  number: 80
+  tls:
+    - hosts:
+      - example.com
+      secretName: guestbook-secret-name
