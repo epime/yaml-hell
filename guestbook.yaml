@@ -14,10 +14,9 @@ spec:
       - pathType: Prefix
         path: /
         backend:
-          service:
-            name: aspnetapp
-            port:
-              number: 80
+          servicename: aspnetapp
+          port:
+            number: 80
   tls: 
   - hosts:
     - devcluster.profitbase.biz
