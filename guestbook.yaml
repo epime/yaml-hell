@@ -36,6 +36,7 @@ metadata:
     kubernetes.io/ingress.class: azure/application-gateway 
     cert-manager.io/cluster-issuer: letsencrypt-staging     
     appgw.ingress.kubernetes.io/ssl-redirect: "true"       
+    appgw.ingress.kubernetes.io/appgw-ssl-certificate: devcluster
 spec:
   rules:
   - host: devcluster.profitbase.biz
@@ -50,5 +51,5 @@ spec:
         pathType: Exact
   tls: 
   - hosts:
-    - devcluster.profitbase.biz
-    secretName: banana
+    - profitbase.biz
+    secretName: devcluster
